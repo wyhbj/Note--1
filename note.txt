@@ -40,3 +40,35 @@ ecmascript:
 		var {a,b} = {a:10,b:5} ->  a=10,b=5
 	要取别名(用:,  解构出来的值:取的别名)：
 	var {a:aa,b:bb} = {a:10,b:5}  aa=10,bb=5
+数组：
+	默认有遍历接口，Symbol.iterator，只要有遍历接口就能使用for of循环
+	可以循环数据与类数组。
+	在使用的时候，可以用数组实例的keys()方法，找key值
+	也可以通过entries来遍历key，vlue。
+	for(var [key,val] of arr.entries()){
+	 	console.log(key,val);
+	 }
+	for(var [,val] of arr.entries()){
+	 	console.log(val);
+	 }
+	使用的时候请使用解构赋值的方式去操作。
+	注意的是：
+		object默认没有遍历接口，所以不能使用for of
+Symbol  -> 唯一。
+      ES5的对象属性名都是字符串，这容易造成属性名的冲突。
+      比如，你使用了一个他人提供的对象，
+      但又想为这个对象添加新的方法（mixin模式），
+      新方法的名字就有可能与现有方法产生冲突。
+      如果有一种机制，保证每个属性的名字都是独一无二的就好了，
+      这样就从根本上防止属性名的冲突。这就是ES6引入Symbol的原因。
+   let obj = {
+     	name:'永生',
+     	age:80,
+     	fn(){
+       	 alert(1)
+     	}
+   }
+    obj[Symbol.fn] = function(){
+      alert(2);
+    }
+    console.log(obj[Symbol.fn]);
