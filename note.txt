@@ -78,3 +78,41 @@ ES6的模块：
 	let a = 10;
 	export {a};
 	import a from './src/a.js';
+1.自定义事件：
+      通过映射，将绑定的函数都放都改事件的数组中，当制定的事件触发的时候，
+      循环该数组中的事件函数并且调用。
+2.深拷贝核心原理：
+      循环数据，查看每个的数据类型是否为对象，如果是对象就继续循环这个对象，
+      直到数据中不为对象类型就返回。
+3.面向对象小明18岁，住北京，职业前端，他说：今天天气不错
+    小明 = {
+      age:18,
+      address:'北京',
+      job:前端,
+      say:function(){
+        console.log('天天气不错')
+      }
+    }
+    function Person(name,age,job,address){
+      this.name = name;
+      this.age = age;
+      this.job = job;
+      this.address = address;
+    }
+    Person.prototype.say = function(){
+      console.log('今天天气不错')
+    }
+    
+    class Person{
+      constructor(name,age,job,address){
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.address = address;
+      }
+      say(){
+        console.log('今天天气不错')
+      }
+    }
+	let p = new Person('小明',18,'前端','北京');
+    	p.say();
