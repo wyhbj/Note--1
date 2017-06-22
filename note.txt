@@ -116,3 +116,28 @@ ES6的模块：
     }
 	let p = new Person('小明',18,'前端','北京');
     	p.say();
+4.暂存区与工作区
+   git diff
+  暂存区与版本区
+   git diff --cached
+5.合并分支
+      git merge 分支名
+6.原型与原型链关系
+  实例化对象的原型链 === 构造函数的原型
+7.中文的区间范围
+  [\u4e00-\u9fa5]
+8.如果判断一个数组是array
+  Object.prostotype.toString.call([]);
+9.ready与onload的区别
+ ready：  DOM加载完成  DOMContentLoaded
+ onload：  页面加载完成
+10.jq的index什么意思
+    以父级为基准找到元素当前位置（包括别的标签）
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <p>1</p>  $(this).index()// 3    $(this).index('p') //0
+      </div>
+11.closest是啥？
+   离自己最近的父级（包括自身）
